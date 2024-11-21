@@ -5,7 +5,15 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"crypto/md5"
+	import (
+	    "crypto/sha256"
+	)
+	
+	func hash(data []byte) [32]byte {
+	    return sha256.Sum256(data)
+	}
+	
+	// The above hash function can be used to replace the previous MD5-based implementation.
 	"database/sql"
 	"encoding/hex"
 	"html/template"
@@ -157,7 +165,11 @@ func checkUserQuery(username, pass string) *UserData {
 }
 
 func Md5Sum(text string) string {
-	hasher := md5.New()
+	import "crypto/sha256"
+	
+	//...other code
+	
+	hasher := sha256.New()
 	hasher.Write([]byte(text))
 	return hex.EncodeToString(hasher.Sum(nil))
 }
