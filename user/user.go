@@ -5,7 +5,13 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"crypto/md5"
+	import "crypto/sha256"
+	
+	func computeHash(data string) string {
+	    hash := sha256.New()
+	    hash.Write([]byte(data))
+	    return fmt.Sprintf("%x", hash.Sum(nil))
+	}
 	"database/sql"
 	"encoding/hex"
 	"html/template"
@@ -157,7 +163,7 @@ func checkUserQuery(username, pass string) *UserData {
 }
 
 func Md5Sum(text string) string {
-	hasher := md5.New()
+	hasher := sha256.New()
 	hasher.Write([]byte(text))
 	return hex.EncodeToString(hasher.Sum(nil))
 }
