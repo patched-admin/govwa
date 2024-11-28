@@ -2,10 +2,12 @@ package user
 
 import (
 
-	"log"
-	"net/http"
-	"strconv"
-	"crypto/md5"
+    "log"
+    "net/http"
+    "strconv"
+    "crypto/sha256"
+
+)
 	"database/sql"
 	"encoding/hex"
 	"html/template"
@@ -157,7 +159,7 @@ func checkUserQuery(username, pass string) *UserData {
 }
 
 func Md5Sum(text string) string {
-	hasher := md5.New()
+	hasher := sha256.New()
 	hasher.Write([]byte(text))
 	return hex.EncodeToString(hasher.Sum(nil))
 }
