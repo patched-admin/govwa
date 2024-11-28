@@ -5,7 +5,19 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"crypto/md5"
+	package main
+	
+	import (
+	    "crypto/sha256"
+	    "fmt"
+	)
+	
+	func main() {
+	    data := "Data to hash"
+	    
+	    hash := sha256.Sum256([]byte(data))
+	    fmt.Printf("SHA256 hash: %x\n", hash)
+	}
 	"database/sql"
 	"encoding/hex"
 	"html/template"
@@ -157,7 +169,8 @@ func checkUserQuery(username, pass string) *UserData {
 }
 
 func Md5Sum(text string) string {
-	hasher := md5.New()
+	hasher := sha256.New()
+	
 	hasher.Write([]byte(text))
 	return hex.EncodeToString(hasher.Sum(nil))
 }
