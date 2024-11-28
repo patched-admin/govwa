@@ -9,7 +9,7 @@
     "Scanner": "gosec",
     "FilePath": "vulnerability/csa/csa.go",
     "CodeSnippet": "6: \t\"net/http\"\n7: \t\"crypto/md5\"\n8: \t\"encoding/hex\"\n",
-    "StartLine": 7,
+    "StartLine": 1,
     "EndLine": 7
   },
   {
@@ -48,7 +48,7 @@
     "Scanner": "gosec",
     "FilePath": "vulnerability/idor/idor.go",
     "CodeSnippet": "7: \t\"net/http\"\n8: \t\"crypto/md5\"\n9: \t\"encoding/hex\"\n",
-    "StartLine": 8,
+    "StartLine": 1,
     "EndLine": 8
   },
   {
@@ -61,7 +61,7 @@
     "Scanner": "gosec",
     "FilePath": "user/user.go",
     "CodeSnippet": "7: \t\"strconv\"\n8: \t\"crypto/md5\"\n9: \t\"database/sql\"\n",
-    "StartLine": 8,
+    "StartLine": 1,
     "EndLine": 8
   },
   {
